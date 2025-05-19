@@ -9,6 +9,7 @@ import androidx.compose.material3.Surface
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.movie.findmymovie.presentation.movie_detail.views.MovieDetailScreen
 import com.movie.findmymovie.presentation.movies.views.MoviesScreen
 import com.movie.findmymovie.presentation.ui.FindMyMovieTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -32,7 +33,7 @@ class MainActivity : ComponentActivity() {
 
                         composable(route= Screen.MovieDetailScreen.route) {
 
-                            //MovieDetailScreen()
+                            MovieDetailScreen()
                         }
                     }
 
