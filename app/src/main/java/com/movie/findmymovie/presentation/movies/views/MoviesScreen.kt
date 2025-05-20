@@ -43,7 +43,7 @@ fun MoviesScreen(navController: NavController, viewModel: MoviesViewModel = hilt
                 items(state.movies) { movie ->
                     MovieListRow(movie = movie, onItemClick = {
                         //navigate to details
-                        navController.navigate(Screen.MovieDetailScreen.route+"/{${movie.imdbID}}")
+                        navController.navigate(Screen.MovieDetailScreen.route+"/${movie.imdbID}")
                     })
                 }
             }

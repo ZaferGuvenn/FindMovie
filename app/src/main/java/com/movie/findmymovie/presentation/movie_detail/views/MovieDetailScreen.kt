@@ -86,25 +86,27 @@ fun MovieDetailScreen(
                 )
             }
 
-            if (state.error.isNotBlank()){
 
-                Text(
-                    text = state.error,
-                    color = MaterialTheme.colorScheme.error,
-                    textAlign = TextAlign.Center,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(14.dp)
-                        .align(Alignment.Center)
-                )
-            }
 
-            if (state.isLoading){
-                CircularProgressIndicator(
-                    modifier = Modifier.align(Alignment.Center)
-                )
-            }
+        }
 
+        if (state.error.isNotBlank()){
+
+            Text(
+                text = state.error,
+                color = MaterialTheme.colorScheme.error,
+                textAlign = TextAlign.Center,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(14.dp)
+                    .align(Alignment.Center)
+            )
+        }
+
+        if (state.isLoading){
+            CircularProgressIndicator(
+                modifier = Modifier.align(Alignment.Center)
+            )
         }
 
     }

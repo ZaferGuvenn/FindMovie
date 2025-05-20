@@ -11,6 +11,5 @@ data class MovieDetail(
     val title: String,
     val type: String,
     val year: String,
-    val imdbID: String,
     val imdbRating: String
 )

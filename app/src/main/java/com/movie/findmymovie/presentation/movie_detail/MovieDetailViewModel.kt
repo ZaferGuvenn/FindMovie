@@ -28,17 +28,23 @@ class MovieDetailViewModel @Inject constructor(
     init {
         savedStateHandle.get<String>(IMDB_ID)?.let {
 
+
+            println("it")
+            println(it)
             getMovieDetail(it)
         }
     }
 
     private fun getMovieDetail(imdbId:String){
+        println("imdbId")
+        println(imdbId)
         getMovieDetailUseCase.executeGetMovieDetail(imdbId).onEach {
 
+            println(it)
             when(it) {
                 is NetworkResult.Success -> _state.value = MovieDetailState(movieDetail = it.data)
-                is NetworkResult.Error<*> -> _state.value = MovieDetailState(error = it.message ?: "Unknown error!")
-                is NetworkResult.Loading<*> -> _state.value = MovieDetailState(isLoading = true)
+                is NetworkResult.Error -> _state.value = MovieDetailState(error = it.message ?: "Unknown error!")
+                is NetworkResult.Loading -> _state.value = MovieDetailState(isLoading = true)
             }
 
         }.launchIn(viewModelScope)

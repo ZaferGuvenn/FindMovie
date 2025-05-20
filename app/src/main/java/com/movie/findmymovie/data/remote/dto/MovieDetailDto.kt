@@ -48,16 +48,17 @@ data class MovieDetailDto(
     val writer: String,
     @SerializedName("Year")
     val year: String,
-    @SerializedName("Actors")
+
     val imdbID: String,
     val imdbRating: String,
     val imdbVotes: String
 )
 
-fun MovieDetailDto.toMovieDetail() =
-    MovieDetail(
+fun MovieDetailDto.toMovieDetail() : MovieDetail{
+    return MovieDetail(
         actors, awards, country,
         director, genre, language,
         poster, title, type,
-        year, imdbID, imdbRating
+        year, imdbRating
     )
+}
