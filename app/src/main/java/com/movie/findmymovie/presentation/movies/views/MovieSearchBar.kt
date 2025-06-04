@@ -36,7 +36,7 @@ fun MovieSearchBar(
 
     var isHintDisplayed by remember {
         mutableStateOf(hint!="")
-    }
+    }// eğer hint boş değilse isHintDisplayed true olacak
 
     Box( modifier= modifier){
 
@@ -64,6 +64,7 @@ fun MovieSearchBar(
                 .padding(horizontal = 20.dp)
                 .onFocusChanged {
                     isHintDisplayed = it.isFocused != true && text.isEmpty()
+                    //text yazılmamış ve focuslanmamışsa
                 }
         )
             if (isHintDisplayed) {

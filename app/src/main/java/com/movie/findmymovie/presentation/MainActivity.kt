@@ -32,6 +32,7 @@ class MainActivity : ComponentActivity() {
                             MoviesScreen(navController = navController)
                         }
 
+                        //movie_detail_screen/{fgsdfefdsa}
                         composable(route= Screen.MovieDetailScreen.route+"/{${IMDB_ID}}") {
 
                             MovieDetailScreen()
